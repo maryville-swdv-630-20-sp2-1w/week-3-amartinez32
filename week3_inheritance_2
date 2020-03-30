@@ -1,0 +1,58 @@
+class Spell:
+    
+    def __init__(self, incantation, name):
+        self.name = name
+        self.incantation = incantation
+        
+    def __str__(self):
+        return self.name + " " + self.incantation + '\n' + self.get_description()
+    
+    def get_description(self):
+        return 'no description'
+    
+    def execute(self):
+        print (self.incantation)
+        
+class Accio(Spell):
+    
+    def __init__(self):
+        Spell.__init__(self, 'Accio','Summoning Charm')
+        
+    #def get_description(self):
+        #return "This charm summons an object to the Caster, potentially over a significant distance."
+
+class Confundo(Spell):
+    def __init__(self):
+        Spell.__init__(self,'Confundo','Confundus Charm')
+        
+    def get_description(self):
+        return 'Causes the victim to become confused and beffuddled.'
+
+def study_spell(spell):
+        print(spell)
+        
+        
+spell = Accio()
+spell.execute
+study_spell(spell)
+study_spell(Confundo())
+
+"" 
+1. Parent class = Spell
+   Child Class = Accio, Confundo
+2. Base Class = Spell
+   SubClass = Accio, Confundo
+ 3. Accio
+    Summoning Charm Accio
+    No description 
+    Confundus Charm Confundo 
+    Causes the victims to become confused and beffuddled 
+ 4. The description in the Confudus class because that class is the argument in the study_spell function. It takes
+    all the elements of that class from there on out.
+    
+ 5.  def __init__(self):
+        Spell.__init__(self, 'Accio','Summoning Charm')
+        
+    #def get_description(self):
+        #return "This charm summons an object to the Caster, potentially over a significant distance."
+        ""
